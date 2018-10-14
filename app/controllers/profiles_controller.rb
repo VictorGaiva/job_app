@@ -26,9 +26,10 @@ class ProfilesController < ApplicationController
     end
     
     def destroy
-        profile = current_user.profiles.find(params[:id])
-        
-        if profile.destroy
+        profile = current_user.profiles.where(name:params[:name])
+        if profile.empty? || !(profile.destroy)
+            render json: {status: 200, msg: 'Unable to delete specified profile.'}
+        else
             render json: { status: 200, msg: 'Profile has been deleted.' }
         end
     end
