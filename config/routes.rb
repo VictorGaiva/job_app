@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 	delete '/user/:id'       	=> 'users#destroy' #works
 
 	# Profiles
-	get    '/profiles'         	=> 'profiles#list'   #workss
+	get    '/profiles'         	=> 'profiles#list'   #works
 	post   '/profiles/create'  	=> 'profiles#create' #works
 	patch  '/profiles/:id'     	=> 'users#update'    #
 	delete '/profiles/:id'     	=> 'users#destroy'   #
